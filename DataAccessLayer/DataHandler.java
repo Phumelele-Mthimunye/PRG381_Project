@@ -1,5 +1,5 @@
-package BusinessLogicLayer;
-import DataAccessLayer.*;
+package DataAccessLayer;
+import BusinessLogicLayer.*;
 import java.io.*;
 import java.util.*;
 
@@ -22,7 +22,7 @@ public class DataHandler {
     }
         Address address = new Address();
     
-    public Void AddAddress() throws IOException {
+    public void AddAddress() throws IOException {
         File file = new File("C:\\Users\\Aura\\Desktop\\PRG381 Project\\Address.txt");
         FileWriter fw = new FileWriter(file);
         PrintWriter pw = new PrintWriter(fw);
@@ -81,7 +81,7 @@ public class DataHandler {
     }
     Decorations decorations = new Decorations();
 
-    public Void AddDecorations() throws IOException {
+    public void AddDecorations() throws IOException {
         File file = new File("C:\\Users\\Aura\\Desktop\\PRG381 Project\\Decorations.txt");
         FileWriter fw = new FileWriter(file);
         PrintWriter pw = new PrintWriter(fw);
