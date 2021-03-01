@@ -13,7 +13,7 @@ public class DataHandler {
         Scanner sc = new Scanner(file);
         while(sc.hasNextLine()){
             String[] line = sc.nextLine().split(",");
-            aList.add(new Address(AddressID, UnitNo, Street, Suburb, City, PhoneNo));
+            aList.add(new Address(Integer.parseInt(line[0]),Integer.parseInt(line[1]),line[2],line[3], line[4], line[5]));
 
 
         }
@@ -22,4 +22,5 @@ public class DataHandler {
 
 
     
+    }
 }
