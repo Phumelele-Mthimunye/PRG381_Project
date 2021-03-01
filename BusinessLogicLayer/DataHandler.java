@@ -73,7 +73,7 @@ public class DataHandler {
         Scanner sc = new Scanner(file);
         while(sc.hasNextLine()){
             String[] line = sc.nextLine().split(",");
-            dList.add(new Decorations(line[0], line[1], line[2], line[3]));
+            dList.add(new Decorations(Integer.parseInt(line[0]), line[1], line[2], line[3]));
 
         }
         sc.close();
