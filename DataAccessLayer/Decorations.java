@@ -3,17 +3,19 @@ package DataAccessLayer;
 import java.io.FileNotFoundException;
 import java.util.List;
 
+import BusinessLogicLayer.DataHandler;
+
 public class Decorations{
-    String  DecorID;
+    Integer  DecorID;
     String Theme;
     String ColorScheme;
     String DecorDescription;
 
-    public String getDecorID()
+    public Integer getDecorID()
     {
         return DecorID;
     }
-    public void setDecorID(String DecorID)
+    public void setDecorID(Integer DecorID)
     {
         this.DecorID = DecorID;
     }
@@ -48,7 +50,7 @@ public class Decorations{
 
     }
 
-    public Decorations(String DecorID, String Theme, String ColorScheme, String DecorDescription)
+    public Decorations(Integer DecorID, String Theme, String ColorScheme, String DecorDescription)
     {
         this.DecorID = DecorID;
         this.Theme = Theme;
