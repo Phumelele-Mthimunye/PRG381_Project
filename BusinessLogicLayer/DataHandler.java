@@ -20,7 +20,50 @@ public class DataHandler {
         sc.close();
         return aList;
 
+        Address address = new Address();
+    
+    public Void AddAddress() throws IOException {
+        File file = new File("C:\\Users\\Aura\\Desktop\\PRG381 Project\\Address.txt");
+        FileWriter fw = new FileWriter(file);
+        PrintWriter pw = new PrintWriter(fw);
+        
+        try (Scanner scan = new Scanner(System.in)) {
+            if(file.exists()){
+                FileReader fr = new FileReader(file);
+                LineNumberReader lr = new LineNumberReader(fr);
+                int linecount = 0;
+                while(lr.readLine()!=null){
+                    linecount++;
+                }
+                address.setAddressID(linecount + 1);
+                lr.close();
+            }
 
+            System.out.print(" Enter your Unit number");
+            String UnitNo = scan.nextLine();
+            address.setUnitNo(UnitNo);
+
+            System.out.print(" Enter your street name");
+            String Street = scan.nextLine();
+            address.setStreet(Street);
+
+            System.out.print(" Enter your suburb name ");
+            String Suburb = scan.nextInt();
+            address.setSuburb(Suburb);
+
+           System.out.print(" Enter your City name ");
+           String City = scan.nextLine();
+           address.setCity(City);
+
+           System.out.print(" Enter your phone number ");
+           String PhoneNo = scan.nextLine();
+           address.setPhoneNo(PhoneNo);
+
+           pw.println(address.toString());
+           pw.close();
+
+        }
+    }
     
     }
 }

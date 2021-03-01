@@ -88,4 +88,9 @@ public class Address {
             return null;
         }
     }
+
+    public String ToString()
+    {
+        return AddressID+ " "+ UnitNo + " "+ Street+ " "+ Suburb+ " "+City+ " "+ PhoneNo;
+    }
 }
