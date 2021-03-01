@@ -1,5 +1,8 @@
 package DataAccessLayer;
 
+import java.io.FileNotFoundException;
+import java.util.List;
+
 public class Decorations{
     String  DecorID;
     String Theme;
@@ -53,6 +56,15 @@ public class Decorations{
         this.DecorDescription = DecorDescription;
     }
 
-    
+    public List<Decorations> decorations( ) throws FileNotFoundException{
+        DataHandler dh = new DataHandler();
+        List<Decorations> dList = dh.GetDecorations();
+        if(!dList.isEmpty()){
+            return dList;
+        }
+        else{
+            return null;
+        }
+    }
 
 }
