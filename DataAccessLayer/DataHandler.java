@@ -3,7 +3,6 @@ import BusinessLogicLayer.*;
 import java.io.*;
 import java.util.*;
 
-<<<<<<< HEAD
 public class DataHandler {
     String filepath = "C:\\Users\\Aura\\Desktop\\PRG381 Project\\Clients.txt";
     public List<Clients> GetClients() throws FileNotFoundException{
@@ -207,7 +206,7 @@ public class DataHandler {
                 System.out.println("User is Found: Welcome "+ tempname +" "+tempsurname);
                 
             } catch (Exception e) {
-                //TODO: handle exception
+                
                 System.out.println("Error:User not Found");
             }
         }
@@ -315,14 +314,6 @@ public class DataHandler {
     public List<Address> GetAddress() throws FileNotFoundException{
         List<Address> aList = new ArrayList<Address>();
 
-=======
-
-public class DataHandler {
-    String filepathAdd = "C:\\Users\\Aura\\Desktop\\PRG381 Project\\Address.txt";
-    public List<Address> GetAddress() throws FileNotFoundException{
-        List<Address> aList = new ArrayList<Address>();
-        
->>>>>>> 650643f524757923b4beb809fd2dd7ec02511700
         File file = new File(filepathAdd);
         Scanner sc = new Scanner(file);
         while(sc.hasNextLine()){
@@ -335,20 +326,10 @@ public class DataHandler {
         return aList;
     }
         Address address = new Address();
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> 650643f524757923b4beb809fd2dd7ec02511700
     public void AddAddress() throws IOException {
         File file = new File("C:\\Users\\Aura\\Desktop\\PRG381 Project\\Address.txt");
         FileWriter fw = new FileWriter(file);
         PrintWriter pw = new PrintWriter(fw);
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> 650643f524757923b4beb809fd2dd7ec02511700
         try (Scanner scan = new Scanner(System.in)) {
             if(file.exists()){
                 FileReader fr = new FileReader(file);
@@ -390,11 +371,6 @@ public class DataHandler {
     String filepathDeco = "C:\\Users\\Aura\\Desktop\\PRG381 Project\\Decorations.txt";
     public List<Decorations> GetDecorations() throws FileNotFoundException{
         List<Decorations> dList = new ArrayList<Decorations>();
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> 650643f524757923b4beb809fd2dd7ec02511700
         File file = new File(filepathDeco);
         Scanner sc = new Scanner(file);
         while(sc.hasNextLine()){
@@ -411,11 +387,6 @@ public class DataHandler {
         File file = new File("C:\\Users\\Aura\\Desktop\\PRG381 Project\\Decorations.txt");
         FileWriter fw = new FileWriter(file);
         PrintWriter pw = new PrintWriter(fw);
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> 650643f524757923b4beb809fd2dd7ec02511700
         try (Scanner scan = new Scanner(System.in)) {
             if(file.exists()){
                 FileReader fr = new FileReader(file);
@@ -445,14 +416,9 @@ public class DataHandler {
 
         }
     }
-<<<<<<< HEAD
 
 }
 
 
 
 
-=======
-    
-}
->>>>>>> 650643f524757923b4beb809fd2dd7ec02511700

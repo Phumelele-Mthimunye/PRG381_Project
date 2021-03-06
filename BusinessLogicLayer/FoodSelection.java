@@ -34,11 +34,6 @@ public class FoodSelection {
     {
 
     }
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> 650643f524757923b4beb809fd2dd7ec02511700
     public FoodSelection(Integer FoodSelID, String Courses, String MenuDescription)
     {
         this.FoodSelID = FoodSelID;
