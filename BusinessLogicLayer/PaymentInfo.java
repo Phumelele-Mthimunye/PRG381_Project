@@ -31,23 +31,26 @@ public int getPayid()
 {
     return payid;
 }
-public void setpayid(int payid)
+public int setpayid(int payid)
 {
  this.payid=payid;
+   return payid;
 }
 //Method to get bookingnr 
 public int Getbookingnr()
 {
     return bookingnr;
 }
-public void setbooking(int bookingid)
+public int setbooking(int bookingid)
 {
 this.bookingnr=bookingid;
+  return bookingid;
 }
 //Method to set numberofguest
-public void setguests(int numberofguest)
+public int setguests(int numberofguest)
 {
     this.noofguest=numberofguest;
+   return noofguest;
     //computeprice(numberofguest);
 }
 
