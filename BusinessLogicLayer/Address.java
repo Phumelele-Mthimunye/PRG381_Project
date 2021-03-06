@@ -75,10 +75,6 @@ public class Address {
         this.City = City;
         this.PhoneNo = PhoneNo;
     }
-<<<<<<< HEAD:BusinessLogicLayer/Address.java
-=======
-
->>>>>>> 650643f524757923b4beb809fd2dd7ec02511700:DataAccessLayer/Address.java
     public List<Address> addresses( ) throws FileNotFoundException{
         DataHandler dh = new DataHandler();
         List<Address> aList = dh.GetAddress();
