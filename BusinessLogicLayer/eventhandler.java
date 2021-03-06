@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 
 
-class eventhandler {
+public class eventhandler {
    // public void email(int bookingid,String eventype,String eventdate )
    // {
        //  final String password = "Mafanato1";
@@ -58,7 +58,7 @@ class eventhandler {
    }
 
 
-    public void getdiscount(int numberofguest)
+    public int getdiscount(int numberofguest)
 {
   if (numberofguest>40)
   {
@@ -67,19 +67,20 @@ class eventhandler {
       int discountprice= totalprice* 10/100;
       int afterdprice= totalprice-discountprice;
       System.out.println("Discount calculated");
-      System.out.println("Total Price: R"+afterdprice);
+      System.out.println("Total Price: R"+afterdprice)
+      return afterdprice;;
   }
   else
   {
     System.out.println("Dont qualify for Discount");
     System.out.println("Total Price: R"+computeprice(numberofguest));
-    
+    return computeprice(numberofguest);
 
   } 
   
 }
 
-public void getpercentage(int numberofguest)
+public String  getpercentage(int numberofguest)
 {
     eventhandler hh = new eventhandler();
     int totalprice =hh.computeprice(numberofguest);
@@ -87,12 +88,17 @@ public void getpercentage(int numberofguest)
    int halfprice=totalprice*50/100;
   if ( totalprice-halfprice==halfprice)
   {
-    System.out.println("Booking Confirmed");
+   String line="Booking Confirmed";
     
+    System.out.println(line);
+   
+    return line;
   }
   else
   {
-    System.out.println("Booking Not confirmed");
+    String line="Booking Not confirmed";
+    System.out.println(line);
+    return line;
    
   }
 }
@@ -103,7 +109,7 @@ public void getpercentage(int numberofguest)
     }
 
    
-    public void Gettingnoofadults() {
+    public int Gettingnoofadults() {
         Scanner scan=null;
         try   
         {
@@ -112,6 +118,7 @@ public void getpercentage(int numberofguest)
         System.out.println("Please Enter the Number of Adults attending the event: ");
         noofadults =Integer.parseInt(scan.nextLine());
         System.out.println("Number of adults: " + noofadults);
+        return noofadults;
         }
         finally
     {
@@ -123,7 +130,7 @@ public void getpercentage(int numberofguest)
 
     }
 
-    public void Gettingnoofkids() 
+    public int Gettingnoofkids() 
 {  Scanner scan=null;
     try   
     {
@@ -133,7 +140,7 @@ public void getpercentage(int numberofguest)
             System.out.println("Please Enter the Number of Adults attending the event: ");
             noofkids =Integer.parseInt(scan.nextLine());
            System.out.println("Number of kids: "+ noofkids);
-    
+        return noofkids;
     }
     finally
     {
@@ -146,7 +153,7 @@ public void getpercentage(int numberofguest)
    
 
 }
-public void GettingEventtype()
+public String GettingEventtype()
 {Scanner scan=null;
     try   
     {
@@ -160,44 +167,53 @@ public void GettingEventtype()
      {
         case 1:
 
-             System.out.println("We palnning an Bapitism ");
-             Gettingnoofadults();
+            String line  = "We palnning an Bapitism ";
+             System.out.println(line);
+             return line;
+           
              // add methods of decorations 
              //add methods of event details 
              //add methods of payment;
             break;
          case 2:
 
-            System.out.println("Congratulation on the wedding ");
-             Gettingnoofadults();
+             String line1 ="Congratulation on the wedding ";
+            System.out.println(line1);
+       
              // add methods of decorations 
              //add methods of event details 
              //add methods of payment;
-            break;
+             return line1;
+           
+            
          case 3:
 
-             System.out.println("We palnning a year end party");
-             Gettingnoofadults();
+            String line2 ="We palnning a year end party";
+             System.out.println(line2);
+          
              // add methods of decorations 
              //add methods of event details 
              //add methods of payment;
-            break;
+             return line2;
+            
         case 4:
 
-             System.out.println("New member in the family ,we are palnning a baby shower");
-             Gettingnoofadults();
+               String line3 ="New member in the family ,we are palnning a baby shower";
+             System.out.println(line3);
+           
              // add methods of decorations 
              //add methods of event details 
              //add methods of payment;
-            break;
+             return line3;
+           
         case 5:
+  String line4="It is a birthday party";
 
-             System.out.println("It is a birthday party");
-             Gettingnoofadults();
-             // add methods of decorations 
+             System.out.println(line4);
+  
               //add methods of event details 
              //add methods of payment;
-           break;
+             return line4;
     
         case 6:
             // Scanner scannner = new Scanner (System.in);
@@ -206,13 +222,11 @@ public void GettingEventtype()
               typeofevent=scan.nextLine();
               System.out.println("We planning an:" + typeofevent);
               Gettingnoofadults();
-             // add methods of decorations 
-             //add methods of event details 
-              //add methods of payment;
-          break;
+             return typeofevent;
         default:
-        System.out.println("ERROR!!! Please enter the type of event ");
-            break;
+        String line5 ="ERROR!!! Please enter the type of event ";
+        System.out.println(line5);
+            return line5;
      }
     }
     finally
