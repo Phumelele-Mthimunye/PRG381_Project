@@ -77,7 +77,7 @@ public class DataHandler {
 
     public void AddEmployee() throws IOException {
         File file = new File("C:\\Users\\Aura\\Desktop\\PRG381 Project\\Employees.txt");
-        FileWriter fw = new FileWriter(file);
+        FileWriter fw = new FileWriter(file, true);
         PrintWriter pw = new PrintWriter(fw);
         try (Scanner scan = new Scanner(System.in)) {
             if(file.exists()){
@@ -213,7 +213,7 @@ public class DataHandler {
     }
     public class reader {
 
-        public List<EventDetails> Geteventdeatils() throws FileNotFoundException {
+        public List<EventDetails> Geteventdetails() throws FileNotFoundException {
 
             List<EventDetails> evendetails = new ArrayList<EventDetails>();
         // List<Clients> clientlist = new ArrayList<Clients>();
@@ -268,7 +268,7 @@ public class DataHandler {
 
         }
 
-        public void writereventdeatails(int bookindnr,int clieintid,String eventype,int addressid,int noofadults,int noofkids,String foodselection,String decoration ) {
+        public void Writereventdetails(int bookindnr,int clieintid,String eventype,int addressid,int noofadults,int noofkids,String foodselection,String decoration ) {
 
             try {
                 FileWriter writer = new FileWriter("EventDetails.txt", true);
@@ -328,7 +328,7 @@ public class DataHandler {
         Address address = new Address();
     public void AddAddress() throws IOException {
         File file = new File("C:\\Users\\Aura\\Desktop\\PRG381 Project\\Address.txt");
-        FileWriter fw = new FileWriter(file);
+        FileWriter fw = new FileWriter(file,true);
         PrintWriter pw = new PrintWriter(fw);
         try (Scanner scan = new Scanner(System.in)) {
             if(file.exists()){
@@ -385,7 +385,7 @@ public class DataHandler {
 
     public void AddDecorations() throws IOException {
         File file = new File("C:\\Users\\Aura\\Desktop\\PRG381 Project\\Decorations.txt");
-        FileWriter fw = new FileWriter(file);
+        FileWriter fw = new FileWriter(file,true);
         PrintWriter pw = new PrintWriter(fw);
         try (Scanner scan = new Scanner(System.in)) {
             if(file.exists()){

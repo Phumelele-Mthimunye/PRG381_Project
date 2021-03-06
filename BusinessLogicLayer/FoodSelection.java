@@ -2,7 +2,7 @@ package BusinessLogicLayer;
 
 public class FoodSelection {
     Integer FoodSelID;
-    String Courses;
+    Integer Courses;
     String MenuDescription;
 
     public Integer getFoodSelID()
@@ -13,11 +13,11 @@ public class FoodSelection {
     {
         this.FoodSelID = FoodSelID;
     }
-    public String getCourses()
+    public Integer getCourses()
     {
         return Courses;
     }
-    public void SetCourses(String Courses)
+    public void SetCourses(Integer Courses)
     {
         this.Courses = Courses;
     }
@@ -34,7 +34,7 @@ public class FoodSelection {
     {
 
     }
-    public FoodSelection(Integer FoodSelID, String Courses, String MenuDescription)
+    public FoodSelection(Integer FoodSelID, Integer Courses, String MenuDescription)
     {
         this.FoodSelID = FoodSelID;
         this.Courses = Courses;

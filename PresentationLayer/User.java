@@ -1,4 +1,5 @@
 package PresentationLayer;
+
 import BusinessLogicLayer.Address;
 import BusinessLogicLayer.Clients;
 import BusinessLogicLayer.Decorations;
@@ -9,6 +10,8 @@ import BusinessLogicLayer.eventhandler;
 import DataAccessLayer.DataHandler;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import DataAccessLayer.DataHandler;
@@ -100,13 +103,13 @@ public class User {
                         case 1:
                             {
                                 DataHandler dh = new DataHandler();
-                                dh.Getpaymentinfo();   
+                                dh.Getpaymentinfo(); 
                             }
                                 break;
                         case 2: 
                             {
                                 DataHandler dd = new DataHandler();
-                                 dd.Geteventdeatils();
+                                 dd.Geteventdetails();
 
                             }
                             case 3:
@@ -136,9 +139,6 @@ public class User {
                         System.out.println("Invalid option");
                             break;
                     }
-                
-                   
-                    
                 }
                
          case 2:
@@ -177,7 +177,8 @@ public class User {
                                 while (scan.hasNextLine())
                                 {
                                     countline++;
-                                    dh.WritePayementinfor( ss.getPayid(countline + 11),ss.setbooking(bookingnr),dd.computeprice(guestno)  ,ss.setguests(guestno),  dd.getdiscount(guestno));
+                                    dh.WritePayementinfor(ss.setpayid(countline + 11), ss.setbooking(bookingnr),
+                                            dd.computeprice(guestno), ss.setguests(guestno), dd.getdiscount(guestno));
                                 }    
                             }
                                 break;
@@ -195,7 +196,7 @@ public class User {
                                 while (scan.hasNextLine())
                                 {
                                   countline++;
-                                  dh.writereventdeatails(ed.setbookingnr(countline+122), cc.getClientID(), dd.GettingEventtype(),aa.getAddressID(), dd.Gettingnoofadults(), dd.Gettingnoofkids(), snn.getCourses(), ee.getDecorDescriptions());
+                                  dh.Writereventdetails(ed.setbookingnr(countline+122), cc.getClientID(), dd.GettingEventtype(),aa.getAddressID(), dd.Gettingnoofadults(), dd.Gettingnoofkids(), snn.getCourses(), ee.getDecorDescriptions());
                 //dh.WritePayementinfor( ss.getPayid(countline + 11),ss.setbooking(bookingnr),dd.computeprice(guestno)  ,ss.setguests(guestno),  dd.getdiscount(guestno));
                                   }   
 

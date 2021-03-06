@@ -6,13 +6,13 @@ import java.util.List;
 import DataAccessLayer.DataHandler;
 
 public class Address {
-    Integer AddressID;
+    int AddressID;
     Integer UnitNo;
     String Street;
     String Suburb;
     String City;
     String PhoneNo;
-    public Integer getAddressID()
+    public int getAddressID()
     {
         return AddressID;
     }

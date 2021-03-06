@@ -84,6 +84,10 @@ public void setdiscount(int discount)
    this.discount= discount;
 
 }
+
+public int Getbookingnr(int bookingnr2) {
+	return bookingnr;
+}
 }
 
 

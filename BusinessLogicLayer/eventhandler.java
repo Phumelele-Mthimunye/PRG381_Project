@@ -49,7 +49,7 @@ public class eventhandler {
     //         throw new RuntimeException(e);
     //     }
     // }
-    private int computeprice(int numberofguest)
+    public int computeprice(int numberofguest)
     {  int priceperguest=50;
       int totalprice = numberofguest * priceperguest;
        System.out.println("Total Price: R" + totalprice);
@@ -67,8 +67,8 @@ public class eventhandler {
       int discountprice= totalprice* 10/100;
       int afterdprice= totalprice-discountprice;
       System.out.println("Discount calculated");
-      System.out.println("Total Price: R"+afterdprice)
-      return afterdprice;;
+      System.out.println("Total Price: R"+afterdprice);
+      return afterdprice;
   }
   else
   {
@@ -174,7 +174,7 @@ public String GettingEventtype()
              // add methods of decorations 
              //add methods of event details 
              //add methods of payment;
-            break;
+            
          case 2:
 
              String line1 ="Congratulation on the wedding ";
