@@ -87,7 +87,7 @@ public class User {
         System.out.println("Do you want to Login as existing employee or Register as new employee?");
         System.out.println("1. Login\n2. Register\n0. Exit");
     }
-    public void viewandinsert(){
+    public void viewandinsert()  throws IOException{
         Scanner scan = new Scanner(System.in);
         int opt = scan.nextInt();
         System.out.println("1.View Details  \n2.Insert Details ");

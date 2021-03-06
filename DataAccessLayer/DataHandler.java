@@ -211,105 +211,103 @@ public class DataHandler {
             }
         }
     }
-    public class reader {
+    public List<EventDetails> Geteventdetails() throws FileNotFoundException {
 
-        public List<EventDetails> Geteventdetails() throws FileNotFoundException {
-
-            List<EventDetails> evendetails = new ArrayList<EventDetails>();
-        // List<Clients> clientlist = new ArrayList<Clients>();
-            File file = new File("C:\\Users\\Aura\\Desktop\\PRG381 Project\\EventDetails.txt");
-            Scanner scann = new Scanner(file);
-            int linecount = 0;
-            if (file.exists()) {
-                while (scann.hasNextLine()) {
-                    String[] line = scann.nextLine().split(",");
-                    evendetails.add(new EventDetails(Integer.parseInt(line[0]), Integer.parseInt(line[1]), line[2],
-                            Integer.parseInt(line[3]), Integer.parseInt(line[4]), Integer.parseInt(line[5]), line[6],
-                            line[7]));
-                    scann.close();
-                    linecount++;
-                }
-                EventDetails oo = new EventDetails();
-                oo.setbookingnr(linecount + 121);
-            
-
-            }
-            return evendetails;
-
-        }
-
-        public List<PaymentInfo> Getpaymentinfo() throws FileNotFoundException {
-            List<PaymentInfo> payinfor = new ArrayList<PaymentInfo>();
-            File file = new File("C:\\Users\\Aura\\Desktop\\PRG381 Project\\PaymentInfor.txt");
-            Scanner scann = new Scanner(file);
-            int linecount = 0;
-            if (file.exists()) {
-                while (scann.hasNextLine()) {
-                    String[] line = scann.nextLine().split("#");
-                    payinfor.add(
-                            new PaymentInfo(Integer.parseInt(line[0]), Integer.parseInt(line[1]), Integer.parseInt(line[2]),
-                                    Integer.parseInt(line[3]), Integer.parseInt(line[4]), Integer.parseInt(line[5])));
-                    scann.close();
-                    linecount++;
-                }
-                PaymentInfo cc = new PaymentInfo();
-                cc.setpayid(linecount + 11);
-                EventDetails oo = new EventDetails();
-                List<EventDetails> evendetails = new ArrayList<EventDetails>();
-                for (EventDetails eventDetails : evendetails) {
-                    for (PaymentInfo paymentInfo : payinfor) {
-                        if (paymentInfo.Getbookingnr() == eventDetails.getbookingnr()) {
-                            cc.setbooking(oo.getbookingnr());
-                        }
-                    }
-                }
-            }
-            return payinfor;
-
-        }
-
-        public void Writereventdetails(int bookindnr,int clieintid,String eventype,int addressid,int noofadults,int noofkids,String foodselection,String decoration ) {
-
-            try {
-                FileWriter writer = new FileWriter("EventDetails.txt", true);
-                writer.write(bookindnr+ clieintid+ eventype+ addressid+ noofadults+noofkids+foodselection+decoration);
-                List<EventDetails> evendetails = new ArrayList<EventDetails>();
-                List<Clients> clientlist = new ArrayList<Clients>();
-                int linecount = 0;
+        List<EventDetails> evendetails = new ArrayList<EventDetails>();
+    // List<Clients> clientlist = new ArrayList<Clients>();
+        File file = new File("C:\\Users\\Aura\\Desktop\\PRG381 Project\\EventDetails.txt");
+        Scanner scann = new Scanner(file);
+        int linecount = 0;
+        if (file.exists()) {
+            while (scann.hasNextLine()) {
+                String[] line = scann.nextLine().split(",");
+                evendetails.add(new EventDetails(Integer.parseInt(line[0]), Integer.parseInt(line[1]), line[2],
+                        Integer.parseInt(line[3]), Integer.parseInt(line[4]), Integer.parseInt(line[5]), line[6],
+                        line[7]));
+                scann.close();
                 linecount++;
-                EventDetails oo = new EventDetails();
-                Clients cc = new Clients();
-                for (EventDetails eventDetails : evendetails) {
-                    for (Clients clients : clientlist) {
-                        if (clients.getClientID() == eventDetails.getclientid()) {
-                            oo.setclientid(cc.getClientID());
-                            oo.setbookingnr(linecount + 121);
-            
-                        }
-                    }
-                }
-                writer.close();
-            } catch (IOException e)
-            {
-                // 
-                e.printStackTrace();
             }
-
+            EventDetails oo = new EventDetails();
+            oo.setbookingnr(linecount + 121);
+        
 
         }
-        public void WritePayementinfor(int payid,int bookingno, int totalprice,int noofguest,int discount)
-        {
-            try {
-                FileWriter writer = new FileWriter("PaymentInfor.txt", true);
-                writer.write(payid + bookingno+ totalprice+ noofguest+ discount);
-                writer.close();
-            } catch (IOException e)
-            {
-                // 
-                e.printStackTrace();
+        return evendetails;
+
+    }
+
+    public List<PaymentInfo> Getpaymentinfo() throws FileNotFoundException {
+        List<PaymentInfo> payinfor = new ArrayList<PaymentInfo>();
+        File file = new File("C:\\Users\\Aura\\Desktop\\PRG381 Project\\PaymentInfor.txt");
+        Scanner scann = new Scanner(file);
+        int linecount = 0;
+        if (file.exists()) {
+            while (scann.hasNextLine()) {
+                String[] line = scann.nextLine().split("#");
+                payinfor.add(
+                        new PaymentInfo(Integer.parseInt(line[0]), Integer.parseInt(line[1]), Integer.parseInt(line[2]),
+                                Integer.parseInt(line[3]), Integer.parseInt(line[4]), Integer.parseInt(line[5])));
+                scann.close();
+                linecount++;
             }
+            PaymentInfo cc = new PaymentInfo();
+            cc.setpayid(linecount + 11);
+            EventDetails oo = new EventDetails();
+            List<EventDetails> evendetails = new ArrayList<EventDetails>();
+            for (EventDetails eventDetails : evendetails) {
+                for (PaymentInfo paymentInfo : payinfor) {
+                    if (paymentInfo.Getbookingnr() == eventDetails.getbookingnr()) {
+                        cc.setbooking(oo.getbookingnr());
+                    }
+                }
+            }
+        }
+        return payinfor;
+
+    }
+
+    public void Writereventdetails(int bookindnr,int clieintid,String eventype,int addressid,int noofadults,int noofkids,int foodselectionid,String decoration ) {
+
+        try {
+            FileWriter writer = new FileWriter("EventDetails.txt", true);
+            writer.write(bookindnr+ clieintid+ eventype+ addressid+ noofadults+noofkids+foodselectionid+decoration);
+            List<EventDetails> evendetails = new ArrayList<EventDetails>();
+            List<Clients> clientlist = new ArrayList<Clients>();
+            int linecount = 0;
+            linecount++;
+            EventDetails oo = new EventDetails();
+            Clients cc = new Clients();
+            for (EventDetails eventDetails : evendetails) {
+                for (Clients clients : clientlist) {
+                    if (clients.getClientID() == eventDetails.getclientid()) {
+                        oo.setclientid(cc.getClientID());
+                        oo.setbookingnr(linecount + 121);
+        
+                    }
+                }
+            }
+            writer.close();
+        } catch (IOException e)
+        {
+            // 
+            e.printStackTrace();
+        }
+
+
+    }
+    public void WritePayementinfor(int payid,int bookingno, int totalprice,int noofguest,int discount)
+    {
+        try {
+            FileWriter writer = new FileWriter("PaymentInfor.txt", true);
+            writer.write(payid + bookingno+ totalprice+ noofguest+ discount);
+            writer.close();
+        } catch (IOException e)
+        {
+            // 
+            e.printStackTrace();
         }
     }
+    
     String filepathAdd = "C:\\Users\\Aura\\Desktop\\PRG381 Project\\Address.txt";
     public List<Address> GetAddress() throws FileNotFoundException{
         List<Address> aList = new ArrayList<Address>();
