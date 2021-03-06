@@ -19,9 +19,10 @@ public class EventDetails{
      // bookingnr=interger.parse(scannner.nextLine());
           return bookingnr;
      }
-     public void setbookingnr(int bookingnr)
+     public int setbookingnr(int bookingnr)
      {
           this.bookingnr=bookingnr;
+          return bookingnr;
      }
 //only reads the booking number since its automated
      public int getclientid()
