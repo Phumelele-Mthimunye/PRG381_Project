@@ -120,7 +120,7 @@ public class User {
                             case 4:
                             {
                                 DataHandler ss = new DataHandler();
-                            
+                                ss.GetFoodSelection();
                             }
                             case 5:
                             {
@@ -212,7 +212,8 @@ public class User {
                             }
                             case 4:
                             {
-
+                                DataHandler dh = new DataHandler();
+                                dh.AddFoodSelection();
                             }
                             case 5:
                             {

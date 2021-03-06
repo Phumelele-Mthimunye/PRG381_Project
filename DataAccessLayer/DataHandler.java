@@ -365,6 +365,18 @@ public class DataHandler {
 
         }
     }
+    String filepathFood = "C:\\Users\\Aura\\Desktop\\PRG381 Project\\FoodSelection.txt";
+    public List<FoodSelection> GetFoodSelection() throws FileNotFoundException{
+        List<FoodSelection> flist = new ArrayList<FoodSelection>();
+        File file = new File(filepathFood);
+        Scanner scan = new Scanner(file);
+        while(scan.hasNextLine()){
+            String[] line = scan.nextLine().split(",");
+            flist.add(new FoodSelection(Integer.parseInt(line[0]),Integer.parseInt(line[1]),line[2]));
+        }
+        scan.close();
+        return flist;
+    }
 
     String filepathDeco = "C:\\Users\\Aura\\Desktop\\PRG381 Project\\Decorations.txt";
     public List<Decorations> GetDecorations() throws FileNotFoundException{
@@ -378,6 +390,36 @@ public class DataHandler {
         }
         sc.close();
         return dList;
+    }
+    FoodSelection food = new FoodSelection();
+    public void AddFoodSelection() throws IOException {
+        File file = new File("C:\\Users\\Aura\\Desktop\\PRG381 Project\\foodselection.txt");
+        FileWriter fw = new FileWriter(file,true);
+        PrintWriter pw = new PrintWriter(fw);
+        try (Scanner scan = new Scanner(System.in)) {
+            if(file.exists()){
+                FileReader fr = new FileReader(file);
+                LineNumberReader lr = new LineNumberReader(fr);
+                int linecount = 0;
+                while(lr.readLine()!=null){
+                    linecount++;
+                }
+                food.setFoodSelID(linecount + 1);
+                lr.close();
+            }
+    
+            System.out.print(" Enter the course");
+            int Course = scan.nextInt();
+            food.SetCourses(Course);
+    
+            System.out.print(" Enter type of food");
+            String FoodDescription = scan.nextLine();
+            food.setMenuDescription(FoodDescription);
+    
+           pw.println(address.toString());
+           pw.close();
+        }
+    
     }
     Decorations decorations = new Decorations();
 
