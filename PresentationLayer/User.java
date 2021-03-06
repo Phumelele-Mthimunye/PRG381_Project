@@ -63,6 +63,7 @@ public class User {
                     System.out.println("Invalid option");
                 }
             }
+            scan.close();
     }
     //Methods
     public void printAppHeader(){

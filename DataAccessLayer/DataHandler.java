@@ -206,7 +206,7 @@ public class DataHandler {
                 System.out.println("User is Found: Welcome "+ tempname +" "+tempsurname);
                 
             } catch (Exception e) {
-                //TODO: handle exception
+                
                 System.out.println("Error:User not Found");
             }
         }
@@ -326,12 +326,10 @@ public class DataHandler {
         return aList;
     }
         Address address = new Address();
-
     public void AddAddress() throws IOException {
         File file = new File("C:\\Users\\Aura\\Desktop\\PRG381 Project\\Address.txt");
         FileWriter fw = new FileWriter(file);
         PrintWriter pw = new PrintWriter(fw);
-
         try (Scanner scan = new Scanner(System.in)) {
             if(file.exists()){
                 FileReader fr = new FileReader(file);
@@ -373,7 +371,6 @@ public class DataHandler {
     String filepathDeco = "C:\\Users\\Aura\\Desktop\\PRG381 Project\\Decorations.txt";
     public List<Decorations> GetDecorations() throws FileNotFoundException{
         List<Decorations> dList = new ArrayList<Decorations>();
-
         File file = new File(filepathDeco);
         Scanner sc = new Scanner(file);
         while(sc.hasNextLine()){
@@ -390,7 +387,6 @@ public class DataHandler {
         File file = new File("C:\\Users\\Aura\\Desktop\\PRG381 Project\\Decorations.txt");
         FileWriter fw = new FileWriter(file);
         PrintWriter pw = new PrintWriter(fw);
-
         try (Scanner scan = new Scanner(System.in)) {
             if(file.exists()){
                 FileReader fr = new FileReader(file);

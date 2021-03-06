@@ -34,7 +34,6 @@ public class FoodSelection {
     {
 
     }
-
     public FoodSelection(Integer FoodSelID, String Courses, String MenuDescription)
     {
         this.FoodSelID = FoodSelID;
